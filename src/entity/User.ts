@@ -1,4 +1,5 @@
-import { Entity, PrimaryGeneratedColumn, Column } from "typeorm"
+import { Entity, PrimaryGeneratedColumn, Column, JoinColumn, ManyToOne } from "typeorm"
+import { Pais } from "./Pais"
 
 @Entity()
 export class User {
@@ -14,5 +15,15 @@ export class User {
 
     @Column()
     age: number
+
+    // @ManyToOne(() => Pais, pais => pais.id)
+    // @JoinColumn([{name: 'id_pais'}])
+    // idPais: Pais
+
+    @Column("varchar", {nullable: true})
+    email: string
+
+    @Column("varchar")
+    password: string
 
 }

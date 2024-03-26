@@ -38,7 +38,7 @@ AppDataSource.initialize().then(async () => {
 
 }).catch(error => console.log(error))
 
-
+const prefix: string = '/api/v1/'
 app.use('/auth', authRouter)
 
 app.listen(PORT, () => {
